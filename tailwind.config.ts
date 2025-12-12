@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Outfit", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,16 +51,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          light: "hsl(var(--coral-light))",
+        },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
         },
-        crimson: {
-          DEFAULT: "hsl(var(--crimson))",
-          dark: "hsl(var(--crimson-dark))",
-        },
-        cream: "hsl(var(--cream))",
-        charcoal: "hsl(var(--charcoal))",
+        teal: "hsl(var(--teal))",
+        lavender: "hsl(var(--lavender))",
+        mint: "hsl(var(--mint))",
       },
       borderRadius: {
         lg: "var(--radius)",
