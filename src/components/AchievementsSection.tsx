@@ -1,70 +1,67 @@
-import { Award, BookOpen, Users, Rocket } from "lucide-react";
+import { CheckCircle2, Trophy, Rocket, Star } from "lucide-react";
 
 const AchievementsSection = () => {
-  const achievements = [
-    {
-      icon: <Award className="w-8 h-8" />,
-      stat: "B.S.",
-      label: "Computer Science",
-    },
-    {
-      icon: <BookOpen className="w-8 h-8" />,
-      stat: "4",
-      label: "Years of Study",
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      stat: "10+",
-      label: "Projects Completed",
-    },
-    {
-      icon: <Rocket className="w-8 h-8" />,
-      stat: "∞",
-      label: "Possibilities Ahead",
-    },
+  const milestones = [
+    { year: "Year 1", title: "Survived Freshman Year", emoji: "😬", description: "Figured out what computer science actually is" },
+    { year: "Year 2", title: "Started Getting It", emoji: "🤔", description: "Code started making sense (sometimes)" },
+    { year: "Year 3", title: "Built Cool Stuff", emoji: "💪", description: "Actual projects that actually worked!" },
+    { year: "Year 4", title: "Crossed the Finish Line!", emoji: "🏆", description: "I'm officially a computer scientist" },
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-secondary">
-      <div className="container max-w-6xl mx-auto px-6">
+    <section className="py-20 md:py-28 bg-secondary/50">
+      <div className="container max-w-4xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-primary font-sans text-sm tracking-[0.2em] uppercase mb-4">
-            By The Numbers
-          </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground">
-            Milestones Achieved
+          <span className="text-5xl mb-4 block">🏅</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Level Up <span className="text-primary">Complete!</span>
           </h2>
+          <p className="font-sans text-lg text-muted-foreground">
+            From confused freshman to certified tech wizard ✨
+          </p>
         </div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {achievements.map((achievement, index) => (
+        {/* Timeline */}
+        <div className="space-y-6">
+          {milestones.map((milestone, index) => (
             <div 
               key={index}
-              className="group relative bg-card rounded-xl p-8 text-center border border-border hover:border-accent/50 hover:shadow-xl transition-all duration-500"
+              className="flex items-start gap-4 md:gap-6 bg-card rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
             >
-              {/* Icon */}
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
-                {achievement.icon}
+              {/* Year badge */}
+              <div className="flex-shrink-0 w-20 md:w-24 h-20 md:h-24 rounded-2xl bg-gradient-to-br from-primary to-coral-light flex flex-col items-center justify-center text-primary-foreground">
+                <span className="text-2xl md:text-3xl">{milestone.emoji}</span>
+                <span className="text-xs font-semibold mt-1">{milestone.year}</span>
               </div>
-              
-              {/* Stat */}
-              <div className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-2">
-                {achievement.stat}
-              </div>
-              
-              {/* Label */}
-              <p className="font-sans text-sm text-muted-foreground tracking-wide">
-                {achievement.label}
-              </p>
 
-              {/* Decorative corner */}
-              <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-accent/10 rotate-45 translate-x-8 -translate-y-8 group-hover:bg-accent/20 transition-colors duration-300" />
+              {/* Content */}
+              <div className="flex-1 pt-2">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  {milestone.title}
+                </h3>
+                <p className="font-sans text-muted-foreground">{milestone.description}</p>
+              </div>
+
+              {/* Checkmark */}
+              <div className="flex-shrink-0 pt-2">
+                <CheckCircle2 className="w-6 h-6 text-teal" />
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Final achievement unlocked */}
+        <div className="mt-12 text-center">
+          <div className="inline-block bg-gradient-to-r from-gold via-accent to-gold-light rounded-2xl p-8 md:p-10">
+            <Trophy className="w-12 h-12 mx-auto text-accent-foreground mb-4" />
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-accent-foreground mb-2">
+              🎮 Achievement Unlocked!
+            </h3>
+            <p className="font-sans text-accent-foreground/80">
+              Bachelor's Degree • Computer Science • Utah Tech University
+            </p>
+          </div>
         </div>
       </div>
     </section>

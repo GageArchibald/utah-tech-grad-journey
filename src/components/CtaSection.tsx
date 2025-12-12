@@ -1,78 +1,56 @@
-import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Heart, PartyPopper } from "lucide-react";
 
 const CtaSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-accent blur-3xl" />
-      </div>
-
-      <div className="container max-w-3xl mx-auto px-6 text-center relative z-10">
-        {/* Quote */}
-        <blockquote className="mb-12">
-          <p className="font-serif text-2xl md:text-3xl text-foreground italic leading-relaxed mb-4">
-            "The future belongs to those who believe in the beauty of their dreams."
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container max-w-3xl mx-auto px-6 text-center">
+        {/* Big thank you */}
+        <div className="mb-12">
+          <span className="text-6xl md:text-7xl block mb-6">🥳</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Couldn't Have Done It <span className="text-primary">Without You!</span>
+          </h2>
+          <p className="font-sans text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            To my family, friends, professors, and everyone who believed in me 
+            (even when I didn't believe in myself)...
           </p>
-          <cite className="font-sans text-sm text-muted-foreground not-italic">
-            — Eleanor Roosevelt
-          </cite>
-        </blockquote>
-
-        {/* CTA text */}
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-          Let's Connect
-        </h2>
-        <p className="font-sans text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-          Excited to start the next chapter. Whether it's collaboration, opportunities, 
-          or just to say hello — I'd love to hear from you.
-        </p>
-
-        {/* Social links */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <SocialButton icon={<Mail className="w-5 h-5" />} label="Email" href="mailto:" />
-          <SocialButton icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" href="https://linkedin.com" />
-          <SocialButton icon={<Github className="w-5 h-5" />} label="GitHub" href="https://github.com" />
         </div>
 
-        {/* Decorative divider */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-px bg-border" />
-          <div className="w-2 h-2 rounded-full bg-accent" />
-          <div className="w-12 h-px bg-border" />
+        {/* Heart animation */}
+        <div className="flex items-center justify-center gap-2 mb-12">
+          <Heart className="w-8 h-8 text-primary fill-primary animate-pulse" />
+          <Heart className="w-10 h-10 text-primary fill-primary animate-pulse animation-delay-100" />
+          <Heart className="w-12 h-12 text-primary fill-primary animate-pulse animation-delay-200" />
+          <Heart className="w-10 h-10 text-primary fill-primary animate-pulse animation-delay-300" />
+          <Heart className="w-8 h-8 text-primary fill-primary animate-pulse animation-delay-400" />
         </div>
 
-        {/* University acknowledgment */}
-        <p className="font-sans text-sm text-muted-foreground">
-          Proud graduate of <span className="text-primary font-medium">Utah Tech University</span>
-        </p>
+        {/* Fun fact cards */}
+        <div className="grid md:grid-cols-2 gap-4 mb-12">
+          <div className="bg-mint/30 rounded-2xl p-6 border-2 border-mint">
+            <span className="text-3xl block mb-2">🚀</span>
+            <h3 className="font-display text-xl font-bold text-foreground mb-1">What's Next?</h3>
+            <p className="font-sans text-muted-foreground">Time to take over the tech world! (Or at least land a job 😅)</p>
+          </div>
+          <div className="bg-lavender/30 rounded-2xl p-6 border-2 border-lavender">
+            <span className="text-3xl block mb-2">🎊</span>
+            <h3 className="font-display text-xl font-bold text-foreground mb-1">Celebration Mode</h3>
+            <p className="font-sans text-muted-foreground">Party planning in progress! You're all invited 🎉</p>
+          </div>
+        </div>
+
+        {/* Final message */}
+        <div className="bg-gradient-to-r from-primary via-coral to-coral-light rounded-3xl p-8 md:p-12 text-primary-foreground">
+          <PartyPopper className="w-10 h-10 mx-auto mb-4" />
+          <p className="font-display text-2xl md:text-3xl font-bold mb-4">
+            Thanks for being part of my journey!
+          </p>
+          <p className="font-sans text-primary-foreground/80 text-lg">
+            Love you all! ❤️
+          </p>
+        </div>
       </div>
     </section>
-  );
-};
-
-interface SocialButtonProps {
-  icon: React.ReactNode;
-  label: string;
-  href: string;
-}
-
-const SocialButton = ({ icon, label, href }: SocialButtonProps) => {
-  return (
-    <Button 
-      variant="outline" 
-      size="lg"
-      className="group gap-2 border-border hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-      asChild
-    >
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {icon}
-        <span className="font-sans">{label}</span>
-        <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-      </a>
-    </Button>
   );
 };
 

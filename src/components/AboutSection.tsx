@@ -1,78 +1,91 @@
-import { Code, Lightbulb, Target } from "lucide-react";
+import { Coffee, Code, Moon, Pizza, Gamepad2, Heart } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section id="celebrate" className="py-20 md:py-28 bg-background">
       <div className="container max-w-5xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-primary font-sans text-sm tracking-[0.2em] uppercase mb-4">
-            The Journey
-          </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground mb-6">
-            Four Years of Growth
+          <span className="text-5xl mb-4 block">🎉</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+            The Journey Was <span className="text-primary">Wild</span>
           </h2>
-          <div className="w-20 h-0.5 bg-accent mx-auto" />
+          <p className="font-sans text-lg text-muted-foreground max-w-xl mx-auto">
+            Four years of coding, caffeine, and occasional chaos. Here's how I survived...
+          </p>
         </div>
 
-        {/* Content grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left - Story */}
-          <div className="space-y-6">
-            <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              What started as curiosity about how technology works transformed into a 
-              deep passion for creating solutions that make a difference.
-            </p>
-            <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              From late-night coding sessions to breakthrough moments in the lab, 
-              every challenge has shaped me into the developer I am today.
-            </p>
-            <p className="font-sans text-lg text-foreground leading-relaxed font-medium">
-              This degree represents not just academic achievement, but the culmination 
-              of countless hours of dedication, growth, and perseverance.
-            </p>
-          </div>
+        {/* Fun survival stats */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-16">
+          <SurvivalCard 
+            emoji="☕"
+            stat="∞"
+            label="Cups of Coffee"
+            color="bg-amber-100 border-amber-200"
+          />
+          <SurvivalCard 
+            emoji="🌙"
+            stat="100+"
+            label="All-Nighters"
+            color="bg-indigo-100 border-indigo-200"
+          />
+          <SurvivalCard 
+            emoji="🐛"
+            stat="1000s"
+            label="Bugs Squashed"
+            color="bg-emerald-100 border-emerald-200"
+          />
+          <SurvivalCard 
+            emoji="🍕"
+            stat="Many"
+            label="Pizza Nights"
+            color="bg-red-100 border-red-200"
+          />
+          <SurvivalCard 
+            emoji="😅"
+            stat="A Few"
+            label="Panic Moments"
+            color="bg-yellow-100 border-yellow-200"
+          />
+          <SurvivalCard 
+            emoji="🎮"
+            stat="Some"
+            label="Study Breaks"
+            color="bg-purple-100 border-purple-200"
+          />
+        </div>
 
-          {/* Right - Highlights */}
-          <div className="space-y-6">
-            <HighlightCard 
-              icon={<Code className="w-6 h-6" />}
-              title="Technical Excellence"
-              description="Mastered modern programming languages, software development methodologies, and cutting-edge technologies."
-            />
-            <HighlightCard 
-              icon={<Lightbulb className="w-6 h-6" />}
-              title="Problem Solving"
-              description="Developed analytical thinking skills to tackle complex challenges with innovative solutions."
-            />
-            <HighlightCard 
-              icon={<Target className="w-6 h-6" />}
-              title="Ready for Impact"
-              description="Prepared to contribute meaningfully to the tech industry and create positive change."
-            />
-          </div>
+        {/* Personal message */}
+        <div className="bg-gradient-to-r from-secondary via-card to-secondary rounded-3xl p-8 md:p-12 text-center border border-border">
+          <span className="text-4xl block mb-4">💬</span>
+          <p className="font-sans text-xl md:text-2xl text-foreground leading-relaxed mb-6">
+            "To everyone who supported me through late-night debugging sessions, 
+            midterm meltdowns, and that one time I almost gave up on recursion..."
+          </p>
+          <p className="font-display text-3xl md:text-4xl font-bold text-primary">
+            THANK YOU! 🙏❤️
+          </p>
         </div>
       </div>
     </section>
   );
 };
 
-interface HighlightCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
+interface SurvivalCardProps {
+  emoji: string;
+  stat: string;
+  label: string;
+  color: string;
 }
 
-const HighlightCard = ({ icon, title, description }: HighlightCardProps) => {
+const SurvivalCard = ({ emoji, stat, label, color }: SurvivalCardProps) => {
   return (
-    <div className="group flex gap-4 p-5 rounded-lg bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-        {icon}
+    <div className={`${color} rounded-2xl p-6 text-center border-2 hover:scale-105 transition-transform duration-300 cursor-default`}>
+      <span className="text-4xl block mb-2">{emoji}</span>
+      <div className="font-display text-3xl md:text-4xl font-bold text-foreground mb-1">
+        {stat}
       </div>
-      <div>
-        <h3 className="font-serif text-lg font-semibold text-foreground mb-1">{title}</h3>
-        <p className="font-sans text-sm text-muted-foreground">{description}</p>
-      </div>
+      <p className="font-sans text-sm text-muted-foreground">{label}</p>
     </div>
   );
 };
