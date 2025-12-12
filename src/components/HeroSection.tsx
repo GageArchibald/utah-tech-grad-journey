@@ -43,7 +43,7 @@ const HeroSection = () => {
 
         {/* Subheading */}
         <p className="animate-fade-up opacity-0 animation-delay-400 font-sans text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
-          Bachelor of Science in Computer Science
+          Bachelor of Science in Information Technology
         </p>
 
         {/* University */}

@@ -2,10 +2,10 @@ import { CheckCircle2, Trophy, Rocket, Star } from "lucide-react";
 
 const AchievementsSection = () => {
   const milestones = [
-    { year: "Year 1", title: "Survived Freshman Year", emoji: "😬", description: "Figured out what computer science actually is" },
+    { year: "Year 1", title: "Survived Freshman Year", emoji: "😬", description: "Figured out what Information Technology actually is" },
     { year: "Year 2", title: "Started Getting It", emoji: "🤔", description: "Code started making sense (sometimes)" },
     { year: "Year 3", title: "Built Cool Stuff", emoji: "💪", description: "Actual projects that actually worked!" },
-    { year: "Year 4", title: "Crossed the Finish Line!", emoji: "🏆", description: "I'm officially a computer scientist" },
+    { year: "Year 4", title: "Crossed the Finish Line!", emoji: "🏆", description: "I'm officially an IT professional" },
   ];
 
   return (
@@ -59,7 +59,7 @@ const AchievementsSection = () => {
               🎮 Achievement Unlocked!
             </h3>
             <p className="font-sans text-accent-foreground/80">
-              Bachelor's Degree • Computer Science • Utah Tech University
+              Bachelor's Degree • Information Technology • Utah Tech University
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Coffee, Code, Moon, Pizza, Gamepad2, Heart } from "lucide-react";
+import { Droplet, Code, Moon, Pizza, Gamepad2, Heart } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -18,10 +18,10 @@ const AboutSection = () => {
         {/* Fun survival stats */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-16">
           <SurvivalCard 
-            emoji="☕"
+            emoji="🥤"
             stat="∞"
-            label="Cups of Coffee"
-            color="bg-amber-100 border-amber-200"
+            label="Dr Peppers Consumed"
+            color="bg-red-100 border-red-200"
           />
           <SurvivalCard 
             emoji="🌙"
